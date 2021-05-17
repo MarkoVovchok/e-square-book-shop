@@ -1,0 +1,11 @@
+<section class='wishlist-wrapper'>
+    <div *ngIf="(wishlistObservable|async)?.length===0"> No books in your wishlist yet...</div>
+    <ng-container *ngIf="wishlistObservable|async as list">
+        <ng-container *ngFor='let book of list'>
+            <div class='wishlist-book-item-group'>
+                <bookshop-book-list-item [book]='book'></bookshop-book-list-item>
+                <button class="remove-button" (click)="removeFromWishlist(book)">Remove</button>
+            </div>
+        </ng-container>
+    </ng-container>
+</section>

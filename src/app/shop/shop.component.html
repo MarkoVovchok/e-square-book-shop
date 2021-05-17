@@ -1,0 +1,13 @@
+<section class='search-page-wrapper'>
+    <section class="search-bar-wrapper">
+        <label for="srch">Type keywords here:</label>
+        <input type="text" id="srch" [formControl]="searchCtrl">
+    </section>
+    <section class="results-container">
+        <bookshop-book-list-item *ngFor="let book of results;trackBy: trackByFn" [book]="book"
+            (click)='showMoreInfo(book)'>
+        </bookshop-book-list-item>
+    </section>
+</section>
+
+<bookshop-more-info *ngIf="openModal" (closedModal)='openModal=!openModal'></bookshop-more-info>

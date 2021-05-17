@@ -1,0 +1,12 @@
+<div class="modal">
+
+    <div class="modal-content">
+        <span class="close" (click)='closeModal()'>&times;</span>
+        <h2>{{book.volumeInfo.title}}</h2>
+        <div class='description-section'>
+            <img [src]="book.volumeInfo?.imageLinks?.thumbnail">
+            <p>{{book.volumeInfo.description}}</p>
+        </div>
+        <button type="button" (click)="addToWishList()">Add to Wishlist</button>
+    </div>
+</div>

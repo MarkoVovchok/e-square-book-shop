@@ -1,0 +1,12 @@
+<section class='login-wrapper'>
+    <div class='input-wrapper'>
+        <label for='user-name'>
+            How should we call you?
+        </label>
+        <input type='text' id='user-name' placeholder="Your Name" [formControl]='userName'>
+        <div class='error-message' *ngIf='userName.invalid && userName.touched'>This field is required</div>
+    </div>
+    <button (click)='login()'>
+        Continue
+    </button>
+</section>

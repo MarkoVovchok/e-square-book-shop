@@ -1,0 +1,15 @@
+<header [class.sticky]='stickyHeader'>
+    <ng-container *ngIf="activeUser|async as user">
+        <div class='router-link' routerLink='shop/wishlist'>Wishlist
+            <ng-container *ngIf="counter|async as count">
+                <span class='counter' [class.bounce]='bounce' *ngIf='count.length>0'>
+                    {{count.length}}
+                </span>
+            </ng-container>
+        </div>
+        <div>Hi,{{user.name}}!</div>
+    </ng-container>
+    <ng-container *ngIf="!(activeUser|async)">
+        <div>Welcome to the E-square book shop!</div>
+    </ng-container>
+</header>
